@@ -17,10 +17,20 @@ window.onscroll = () => {
 
 /* ================Theme colors============== */
 
-const alternateStyles = document.querySelectorAll(".alternate-style");
+const alternateStyles = document.querySelectorAll(".alternate-style")
+      alternateThemes = document.querySelectorAll(".alternate-theme")
 
 const setActiveStyle = (color) => {
     alternateStyles.forEach(style  =>{
+if(color === style.getAttribute("title")){
+    style.removeAttribute("disabled")
+}else{
+    style.setAttribute("disabled", "true")
+}
+    })
+    
+    
+    alternateThemes.forEach(style  =>{
 if(color === style.getAttribute("title")){
     style.removeAttribute("disabled")
 }else{
